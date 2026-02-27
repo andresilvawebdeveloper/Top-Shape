@@ -21,18 +21,17 @@ export default function LoginScreen({ navigation }) {
       {/* 2. ÁREA INFERIOR: BOTÕES DE LOGIN/SIGN UP */}
       <View style={styles.authContainer}>
         
-        {/* Botão de Login - Agora navega para o SignInScreen (Formulário) */}
+        {/* Botão de Login - O onPress fica apenas no TouchableOpacity */}
         <TouchableOpacity 
           style={styles.buttonWrapper}
           onPress={() => navigation.navigate('SignIn')}
         >
           <BlurView intensity={20} tint="light" style={styles.glassButton}>
             <Text style={styles.buttonText}>LOGIN</Text>
-            onPress={() => navigation.navigate('SignIn')}
           </BlurView>
         </TouchableOpacity>
 
-        {/* Botão de Sign Up - Navega para o RegisterScreen */}
+        {/* Botão de Sign Up */}
         <TouchableOpacity 
           style={styles.signUpButton} 
           onPress={() => navigation.navigate('Register')}
@@ -57,8 +56,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   logo: {
-    width: 400, 
-    height: 400,
+    width: 350, // Ajustado ligeiramente para evitar cortes em ecrãs menores
+    height: 350,
   },
   tagline: {
     color: '#0099ff', 

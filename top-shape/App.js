@@ -2,11 +2,14 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-// 1. Importe os TRÊS ecrãs corretamente
 import LoginScreen from './src/screens/LoginScreen';
 import RegisterScreen from './src/screens/RegisterScreen';
-import SignInScreen from './src/screens/SignInScreen'; 
+import SignInScreen from './src/screens/SignInScreen';
 import ForgotPasswordScreen from './src/screens/ForgotPasswordScreen';
+import TabNavigator from './src/navigation/TabNavigator'; // Onde o Ranking já está!
+import AccountSettingsScreen from './src/screens/AccountSettingsScreen';
+import NotificationsScreen from './src/screens/NotificationsScreen';
+import PrivacyScreen from './src/screens/PrivacyScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -17,18 +20,16 @@ export default function App() {
         initialRouteName="Login" 
         screenOptions={{ headerShown: false }}
       >
-        {/* Rota inicial: Splash/Branding */}
         <Stack.Screen name="Login" component={LoginScreen} />
-        
-        {/* Rota para o formulário de entrada */}
         <Stack.Screen name="SignIn" component={SignInScreen} />
-        
-        {/* Rota para o formulário de registo */}
         <Stack.Screen name="Register" component={RegisterScreen} />
-
         <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} />
+        <Stack.Screen name="AccountSettings" component={AccountSettingsScreen} />
+        <Stack.Screen name="Notifications" component={NotificationsScreen} />
+        <Stack.Screen name="Privacy" component={PrivacyScreen} />
         
-        
+        {/* Este 'Dashboard' carrega o TabNavigator, que já tem o Ranking lá dentro */}
+        <Stack.Screen name="Dashboard" component={TabNavigator} />
       </Stack.Navigator>
     </NavigationContainer>
   );
