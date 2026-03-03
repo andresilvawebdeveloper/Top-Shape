@@ -108,9 +108,12 @@ export default function DashboardScreen({ navigation }) {
           </View>
         </BlurView>
 
-        {/* BOTÃO CENTRAL DE AÇÃO */}
-        <TouchableOpacity style={styles.actionButton}>
-          <Text style={styles.actionButtonText}>INICIAR DESAFIO IA</Text>
+        {/* BOTÃO CENTRAL DE AÇÃO - Agora navega para a seleção de desafios */}
+        <TouchableOpacity 
+          style={styles.actionButton}
+          onPress={() => navigation.navigate('ChallengeSelection')}
+        >
+          <Text style={styles.actionButtonText}>INICIAR DESAFIO </Text>
           <Ionicons name="play-circle" size={24} color="#000" />
         </TouchableOpacity>
 
@@ -184,7 +187,7 @@ const styles = StyleSheet.create({
   scrollContent: { 
     paddingHorizontal: 25, 
     paddingTop: 10,
-    paddingBottom: 120 // Espaço extra para não ficar por baixo da Tab Bar flutuante
+    paddingBottom: 120 
   },
   header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 20, marginBottom: 30 },
   welcomeText: { color: 'rgba(255,255,255,0.6)', fontSize: 16 },

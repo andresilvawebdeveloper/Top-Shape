@@ -1,3 +1,4 @@
+import '@tensorflow/tfjs-react-native'; 
 import { registerRootComponent } from 'expo';
 
 import App from './App';
